@@ -1,0 +1,25 @@
+<h3>Welcome to my Online Store</h3>
+
+<p><strong>My Products:</strong></p>
+
+<p>
+    User country: <%= @country %><br />
+    User city: <%= @city %><br />
+    User currency: <%= @currency %>
+</p>
+
+<div class="product">
+    <h4>Shirt</h4>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel necessitatibus repudiandae at ullam debitis. Aspernatur rem optio quasi sint quibusdam molestiae reiciendis accusantium. Debitis facilis ratione hic libero distinctio. Veritatis.</p>
+    <p><strong>Price: <span><%= number_to_currency(29, unit: "$") %></span></strong></p>
+</div>
+<div class="product">
+    <h4>Shoes</h4>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel necessitatibus repudiandae at ullam debitis. Aspernatur rem optio quasi sint quibusdam molestiae reiciendis accusantium. Debitis facilis ratione hic libero distinctio. Veritatis.</p>
+    <p><strong>Price: <span><%= number_to_currency(69, unit: "$") %></span></strong></p>
+</div>
+<div class="product">
+    <h4>Jeans</h4>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel necessitatibus repudiandae at ullam debitis. Aspernatur rem optio quasi sint quibusdam molestiae reiciendis accusantium. Debitis facilis ratione hic libero distinctio. Veritatis.</p>
+    <p><strong>Price: <span><%= number_to_currency(49, unit: "$") %></span></strong></p>
+</div>
