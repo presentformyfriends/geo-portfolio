@@ -29,9 +29,6 @@
 /public/assets
 .byebug_history
 
-# Added by me
-/config/initializers/rack-mini-profiler.rb
-
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
