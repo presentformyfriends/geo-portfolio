@@ -1,0 +1,18 @@
+  <style>
+      body .readme{        
+        background-image: url("<%= (@city_photo_url) %>");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center; 
+      }
+  </style>
+
+<% content_for :footer do %>
+  <footer tabindex="0">
+    <div>
+      <%= mail_to "michael.graham.dev@gmail.com", render(:partial => 'svg/email-envelope') %>
+      <%= link_to render(:partial => 'svg/stackoverflow'), "https://stackoverflow.com/users/13376660/presentformyfriends", target: "_blank", rel: "noopener" %>
+      <%= link_to render(:partial => 'svg/github'), "https://github.com/presentformyfriends", target: "_blank", rel: "noopener" %>
+    </div>
+  </footer>
+<% end %>

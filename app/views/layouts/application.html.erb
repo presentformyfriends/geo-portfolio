@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%= stylesheet_link_tag "application" %>
+  <%= yield %>
+  <%= javascript_pack_tag 'application' %>
+  <%= javascript_pack_tag 'app' %>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,700;1,300&family=Inter&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.14.0/devicon.min.css">
+  <title>Michael Graham Developer Portfolio</title>
+</head>
+
+<body class ="<%= @theme %>">
+
+  <!-- Shuffle toggle button -->
+  <%= form_tag homepage_path, :attr => 'tabindex:0', :method => :get do |f| %>
+    <%= label_tag :random, :class => 'toggle-switch' do %>
+      <%= check_box_tag :random, true, params[:random], :onchange => 'this.form.submit();' %>
+      <span class="toggle-slider round"></span>
+    <% end %>
+  <% end %>
+  
+  <header>
+    <!-- Nav with tiles -->
+    <nav>
+      <div tabindex="0" class="link active readme">
+        <span role="img" aria-label="<%=@city%>"> </span>
+        <h1>read me</h1>
+        <aside>
+          <%= @city %>
+        </aside>
+      </div>
+      <div tabindex="0" class="link active talents">
+        <span role="img" aria-label="Belfast"> </span>
+        <h1>talents</h1>
+        <aside>
+          Belfast
+        </aside>
+      </div>
+      <div tabindex="0" class="link active projects">
+        <span role="img" aria-label="Dublin"> </span>
+        <h1>projects</h1>
+        <aside>
+          Dublin
+        </aside>
+      </div>
+      <div data-href="#" tabindex="0" class="link active about" role="link">
+        <span role="img" aria-label="Toronto"> </span>
+        <h1>about</h1>
+        <aside>
+          Toronto
+        </aside>
+      </div>
+    </nav>
+  </header>
+
+  <section class="tile-container">
+
+    <!-- Close button -->
+    <button type="button" class="close-btn" tabindex="0">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- Inner tiles after nav tiles are clicked -->
+    <section class="tiles readme">
+
+      <div class="content-wrapper">
+
+        <h1>read me</h1>
+
+        <ul class="emoji-bullet">
+          <li>This app was built with Ruby on Rails. The <i>Read Me</i> tile displays a photo of your city, using the <%= link_to "Geocoder gem", "https://rubygems.org/gems/geocoder/versions/1.3.7", target: "_blank", rel: "noopener" %> to find it based on your IP address.</li>
+          <li>The controller makes a request to the <%= link_to "Google Places API", "https://developers.google.com/maps/documentation/places/web-service/overview", target: "_blank", rel: "noopener" %> to get the photo of your city.</li>
+          <li>If the IP detection were to fail, the controller would use the <%= link_to "Faker gem", "https://github.com/stympy/faker#fakerinternet", target: "_blank", rel: "noopener" %> to generate a random IP address.</li>
+          <li>The Projects and Talents tiles display photos of Ireland (my ancestral homeland), and the About tile shows my home city of Toronto, Canada.</li>
+          <li>You can view the code for this web app <%= link_to "here", "https://github.com/presentformyfriends/test-origin", target: "_blank", rel: "noopener" %>.</li>
+          <li>Use the shuffle toggle at top left to see an example rendering with a random IP address.</li>
+        </ul>
+
+        <%= yield :footer %>
+
+      </div>
+
+    </section>
+
+    <section class="tiles talents">
+
+      <div class="content-wrapper">
+
+        <h1>talents</h1>
+
+        <div>
+
+          <div class="talents-content">
+
+            <section class="talent-box">
+              <h2>Backend</h2>
+              <section class="talent-icons">
+                <i class="devicon-ruby-plain-wordmark"></i>
+                <i class="devicon-rails-plain-wordmark"></i>
+                <i class="devicon-python-plain-wordmark"></i>
+                <i class="devicon-flask-original-wordmark"></i>
+              </section>
+            </section>
+
+            <section class="talent-box">
+              <h2>Frontend</h2>
+              <section class="talent-icons">
+                <i class="devicon-vuejs-plain-wordmark"></i>
+                <i class="devicon-wordpress-plain-wordmark"></i>
+                <i class="devicon-sass-original"></i>
+                <i class="devicon-bootstrap-plain-wordmark"></i>
+              </section>
+            </section>
+
+            <section class="talent-box">
+              <h2>Database</h2>
+              <section class="talent-icons">
+                <i class="devicon-postgresql-plain-wordmark"></i>
+                <i class="devicon-mysql-plain-wordmark"></i>
+              </section>
+            </section>
+
+            <section class="talent-box">
+              <h2>Server</h2>
+              <section class="talent-icons">
+                <i class="devicon-nginx-original"></i>
+                <i class="devicon-ubuntu-plain-wordmark"></i>
+              </section>
+            </section>
+
+            <section class="talent-box">
+              <h2>Platform</h2>
+              <section class="talent-icons">
+                <i class="devicon-digitalocean-plain-wordmark"></i>
+                <i class="devicon-amazonwebservices-plain-wordmark"></i>
+                <i class="devicon-heroku-plain-wordmark"></i>
+              </section>
+            </section>
+
+            <section class="talent-box">
+              <h2>Tools</h2>
+              <section class="talent-icons">
+                <!-- Temporary plain vscode icon until devicons group merges my PR to fix the wordmark icon -->
+                <i class="devicon-vscode-plain"></i>
+                <i class="devicon-photoshop-line"></i>
+                <i class="devicon-illustrator-line"></i>
+                <i class="devicon-git-plain-wordmark"></i>
+              </section>
+            </section>
+
+          </div>
+        </div>
+
+        <%= yield :footer %>
+
+      </div>
+
+    </section>
+
+    <section class="tiles projects">
+
+      <div class="content-wrapper">
+
+        <h1>projects</h1>
+        
+        <div>
+
+          <div class="projects-content">
+
+            <div class="project-box">
+              <h2>Instagram Clone</h2><br>
+              <p>Responsive design web app based on Instagram; content inspired by the Netflix series <i>Girl from Nowhere</i>. WCAG 2 conformant.</p>
+              <div class="project-icons">
+                <i class="devicon-rails-plain-wordmark colored"></i>
+                <i class="devicon-sass-original colored"></i>
+                <i class="devicon-bootstrap-plain-wordmark colored"></i>
+                <i class="devicon-jquery-plain-wordmark colored"></i>
+                <i class="devicon-postgresql-plain-wordmark colored"></i>
+                <i class="devicon-amazonwebservices-plain-wordmark colored" style="font-size: 6rem;"></i>
+                <i class="devicon-heroku-plain-wordmark colored"></i>
+              </div>
+              <p><%= link_to "app", "https://nannogram.herokuapp.com/", target: "_blank", rel: "noopener" %><span class="divider">&nbsp;|&nbsp;</span><%= link_to "repo", "https://github.com/presentformyfriends/instagram-clone", target: "_blank", rel: "noopener" %></p>
+            </div>
+
+            <div class="project-box">
+              <h2>This website</h2><br>
+              <p>Responsive design portfolio site leveraging the Google Places and IPLocate APIs, as well as the Geocoder and Faker gems. WCAG 2 conformant. Deployed with Render.</p>
+              <div class="project-icons">
+                <i class="devicon-rails-plain-wordmark colored"></i>
+                <i class="devicon-postgresql-plain-wordmark colored"></i>
+              </div>
+              <p><%= link_to "repo", "https://github.com/presentformyfriends/test-origin", target: "_blank", rel: "noopener" %></p>
+            </div>
+
+            <div class="project-box">
+              <h2>Chatbot</h2><br>
+              <p>Simple and effective chatbot/virtual assistant solution. WCAG 2 conformant.</p>
+              <div class="project-icons">
+                <i class="devicon-html5-plain-wordmark colored"></i>
+                <i class="devicon-css3-plain-wordmark colored"></i>
+                <i class="devicon-javascript-plain colored"></i>
+              </div>
+              <p><%= link_to "codepen", "https://codepen.io/nthpower/pen/XWgjbLZ", target: "_blank", rel: "noopener" %></p>
+            </div>
+
+          </div>
+        </div>
+
+        <%= yield :footer %>
+
+      </div>
+
+    </section>
+
+    <section class="tiles about">
+
+      <div class="content-wrapper">
+
+        <h1>about</h1>
+
+        <div>
+          <div class="about-content">
+      
+            <ul class="color-bullet">
+              <li>Web developer and open source contributor with a background in digital product design.</li>
+              <li>Proficient in Ruby, Python, Javascript, HTML, CSS/SCSS.</li>
+              <li>Adept with frameworks inlcuding Ruby on Rails, Vue.js, Flask, Bootstrap.</li>
+              <li>Comfortable deploying with various server software (NGINX, AWS) and multiple hosting platforms (Droplet, VPS, Heroku).</li>
+            </ul>
+
+          </div>
+        </div>
+
+        <%= yield :footer %>
+
+      </div>
+
+    </section>
+
+  </section>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
