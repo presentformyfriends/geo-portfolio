@@ -1,7 +1,6 @@
 class PublicController < ApplicationController
 
   def index
-    require 'dotenv/load'
 
     @theme = session[:theme]
     
@@ -112,7 +111,7 @@ class PublicController < ApplicationController
 
     # URLs for Google Places API requests
     @base_uri = "https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input="
-    @city_url = URI(@base_uri + "#{@city_encoded}&inputtype=textquery&fields=formatted_address%2Cname%2Cphoto&key=#{ENV['API_KEY']}")
+    @city_url = URI(@base_uri + "#{@city_encoded}&inputtype=textquery&fields=formatted_address%2Cname%2Cphoto&key=#{Rails.application.credentials.api_key}")
 
     @photo_reference_url = get_reference(@city_url)
 
@@ -136,7 +135,7 @@ class PublicController < ApplicationController
 
     @photo_reference = json["candidates"].first["photos"].first["photo_reference"]
 
-    photo_reference_url = "https://maps.googleapis.com/maps/api/place/photo?maxheight=1600&?maxwidth=1600&photo_reference=#{@photo_reference}&key=#{ENV['API_KEY']}"
+    photo_reference_url = "https://maps.googleapis.com/maps/api/place/photo?maxheight=1600&?maxwidth=1600&photo_reference=#{@photo_reference}&key=#{Rails.application.credentials.api_key}"
 
     return photo_reference_url
 

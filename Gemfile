@@ -14,10 +14,6 @@ gem 'pg', '~> 1.2', '>= 1.2.3'
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
 
-# Environment variables
-# gem 'dotenv-rails', groups: [:development, :test]
-gem 'dotenv-rails', require: 'dotenv/rails-now'
-
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
