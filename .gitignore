@@ -41,3 +41,6 @@ yarn-debug.log*
 
 # Ignore API key
 .env
+
+# Ignore Rack::MiniProfiler
+/config/initializers/rack-mini-profiler.rb
