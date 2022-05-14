@@ -1,1 +1,1 @@
-Figaro.require_keys("API_KEY")
+Figaro.require_keys('API_KEY')
