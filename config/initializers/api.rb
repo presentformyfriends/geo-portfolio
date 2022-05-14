@@ -1,1 +1,1 @@
-api.key = ENV['API_KEY']
+Api.key = ENV['API_KEY']
