@@ -39,8 +39,5 @@
 yarn-debug.log*
 .yarn-integrity
 
-# Ignore API key
-.env
-
-# Ignore Rack::MiniProfiler
-/config/initializers/rack-mini-profiler.rb
+# Ignore application configuration
+/config/application.yml
