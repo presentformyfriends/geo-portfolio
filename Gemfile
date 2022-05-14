@@ -8,9 +8,6 @@ gem 'rails', '~> 6.1.4', '>= 6.1.4.1'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.2', '>= 1.2.3'
 
-# local environment variables
-gem "figaro"
-
 # Use sqlite3 as the database for Active Record
 # gem 'sqlite3', '~> 1.4'
 
