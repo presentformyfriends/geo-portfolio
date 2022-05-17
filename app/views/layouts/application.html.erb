@@ -17,6 +17,7 @@
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,700;1,300&family=Inter&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.14.0/devicon.min.css">
   <title>Michael Graham Developer Portfolio</title>
+  <%= render 'application/favicon' %>
 </head>
 
 <body class ="<%= @theme %>">
@@ -84,7 +85,7 @@
           <li>The controller makes a request to the <%= link_to "Google Places API", "https://developers.google.com/maps/documentation/places/web-service/overview", target: "_blank", rel: "noopener" %> to get the photo of your city.</li>
           <li>If the IP detection were to fail, the controller would use the <%= link_to "Faker gem", "https://github.com/stympy/faker#fakerinternet", target: "_blank", rel: "noopener" %> to generate a random IP address.</li>
           <li>The Projects and Talents tiles display photos of Ireland (my ancestral homeland), and the About tile shows my home city of Toronto, Canada.</li>
-          <li>You can view the code for this web app <%= link_to "here", "https://github.com/presentformyfriends/test-origin", target: "_blank", rel: "noopener" %>.</li>
+          <li>You can view the code for this web app <%= link_to "here", "https://github.com/presentformyfriends/geo-portfolio", target: "_blank", rel: "noopener" %>.</li>
           <li>Use the shuffle toggle at top left to see an example rendering with a random IP address.</li>
         </ul>
 
@@ -237,7 +238,7 @@
               <li>Web developer and open source contributor with a background in digital product design.</li>
               <li>Proficient in Ruby, Python, Javascript, HTML, CSS/SCSS.</li>
               <li>Adept with frameworks inlcuding Ruby on Rails, Vue.js, Flask, Bootstrap.</li>
-              <li>Comfortable deploying with various server software (NGINX, AWS) and multiple hosting platforms (Droplet, VPS, Heroku).</li>
+              <li>Comfortable deploying with various server software (NGINX, AWS) and multiple hosting platforms (Droplet, Heroku, Render).</li>
             </ul>
 
           </div>
