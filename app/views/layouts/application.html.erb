@@ -22,45 +22,48 @@
 
 <body class ="<%= @theme %>">
 
-  <!-- Shuffle toggle button -->
-  <%= form_tag homepage_path, :attr => 'tabindex:0', :method => :get do |f| %>
-    <%= label_tag :random, aria: { label: 'Shuffle' }, :class => 'toggle-switch' do %>
-      <%= check_box_tag :random, true, params[:random], :onchange => 'this.form.submit();' %>
-      <span class="toggle-slider round"></span>
+  <div role="complementary">
+    <!-- Shuffle toggle button -->
+    <%= form_tag homepage_path, :attr => 'tabindex:0', :method => :get do |f| %>
+      <%= label_tag :random, aria: { label: 'Shuffle' }, :class => 'toggle-switch' do %>
+        <%= check_box_tag :random, true, params[:random], :onchange => 'this.form.submit();' %>
+        <span class="toggle-slider round"></span>
+        <legend>Shuffle</legend>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
   
   <header>
     <!-- Nav with tiles -->
     <nav>
-      <div tabindex="0" class="link active readme">
+      <figure tabindex="0" class="link active readme">
         <span role="img" aria-label="<%=@city%>"> </span>
         <h1>read me</h1>
-        <aside>
+        <figcaption>
           <%= @city %>
-        </aside>
-      </div>
-      <div tabindex="0" class="link active talents">
+        </figcaption>
+      </figure>
+      <figure tabindex="0" class="link active talents">
         <span role="img" aria-label="Belfast"> </span>
         <h1>talents</h1>
-        <aside>
+        <figcaption>
           Belfast
-        </aside>
-      </div>
-      <div tabindex="0" class="link active projects">
+        </figcaption>
+      </figure>
+      <figure tabindex="0" class="link active projects">
         <span role="img" aria-label="Dublin"> </span>
         <h1>projects</h1>
-        <aside>
+        <figcaption>
           Dublin
-        </aside>
-      </div>
-      <div data-href="#" tabindex="0" class="link active about" role="link">
+        </figcaption>
+      </figure>
+      <figure data-href="#" tabindex="0" class="link active about" role="link">
         <span role="img" aria-label="Toronto"> </span>
         <h1>about</h1>
-        <aside>
+        <figcaption>
           Toronto
-        </aside>
-      </div>
+        </figcaption>
+      </figure>
     </nav>
   </header>
 

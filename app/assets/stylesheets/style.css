@@ -27,7 +27,7 @@ body {
   overflow: hidden;
 }
 
-h1, h2, aside {
+h1, h2, figcaption {
   display: block;
   margin: 0;
   padding: 0;
@@ -50,17 +50,6 @@ p {
   text-align: center;
   font-size: 1rem;
 }
-
-aside {
-  position: fixed;
-  -ms-flex-item-align: end;
-      align-self: flex-end;
-  font-size: 1rem;
-  font-weight: 300;
-  font-style: italic;
-  padding-bottom: 0.625rem;
-}
-
 
 /** NAVIGATION **/
 
@@ -89,7 +78,7 @@ nav::-webkit-scrollbar {
 }
 
 /* Tile outline for mouse and keyboard navigation */
-nav > div:focus-visible, nav > div:hover {
+nav > figure:focus-visible, nav > figure:hover {
   outline: solid 0.313rem #ffff99;
   pointer-events: none;
 }
@@ -158,19 +147,17 @@ nav > div:focus-visible, nav > div:hover {
   pointer-events: all;
 }
 
+figure > figcaption {
+  position: fixed;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  font-size: 1rem;
+  font-weight: 300;
+  font-style: italic;
+  padding-bottom: 0.625rem;
+}
+
 /***********************************************/
-
-
-section a {
-  -webkit-text-decoration-style: dotted;
-          text-decoration-style: dotted;
-  text-underline-offset: 0.3rem;
-  color: inherit;
-}
-
-section a:hover {
-  color: #64FAC0;
-}
 
 
 /** TILE CONTAINER **/
@@ -194,6 +181,17 @@ section a:hover {
 
 
 /** TILES **/
+
+section a {
+  -webkit-text-decoration-style: dotted;
+          text-decoration-style: dotted;
+  text-underline-offset: 0.3rem;
+  color: inherit;
+}
+
+section a:hover {
+  color: #64FAC0;
+}
 
 .readme {
   -webkit-box-flex: 1;
@@ -502,6 +500,11 @@ footer a:hover > svg {
   opacity: 0;
   width: 0;
   height: 0;
+}
+
+legend {
+  font-size: 1rem;
+  text-align: right;
 }
 
 /* The slider */
