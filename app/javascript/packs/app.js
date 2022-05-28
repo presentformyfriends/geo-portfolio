@@ -1,13 +1,13 @@
 window.onload = function() {
 
   const navBtn = document.querySelector('.close-btn');
-  const links = document.querySelectorAll('.link');
+  const navTiles = document.querySelectorAll('.nav-tile');
   const tileContainer = document.querySelector('.tile-container');
-  const tiles = document.querySelectorAll('.tiles');
+  const tiles = document.querySelectorAll('.tile');
 
   let timings = [];
 
-  for(let i = 0; i < links.length; i++){
+  for(let i = 0; i < navTiles.length; i++){
     timings.push(i*200);
   }
 
@@ -23,16 +23,16 @@ window.onload = function() {
       }, timings[timings.length-1]);
     }
 
-    links.forEach((link, i) => {
+    navTiles.forEach((navTile, i) => {
       setTimeout(() => {
-        link.classList.toggle('active');
+        navTile.classList.toggle('active');
       }, timings[i+plus]);
     })
 
     navBtn.classList.toggle('active');
   }
 
-  links.forEach((item, i) => {
+  navTiles.forEach((item, i) => {
     item.addEventListener('click', () => {
       toggleClass();
       tiles.forEach(ele => {

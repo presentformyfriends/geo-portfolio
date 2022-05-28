@@ -2,20 +2,23 @@
   "master_picture": "app/assets/images/favicon.png",
   "favicon_design": {
       "ios": {
-          "picture_aspect": "no_change",
+          "picture_aspect": "background_and_margin",
+          "background_color": "#cccccc",
+          "margin": "21%",
           "assets": {
               "ios6_and_prior_icons": false,
               "ios7_and_later_icons": false,
               "precomposed_icons": false,
               "declare_only_default_icon": true
-          }
+          },
+          "app_name": "Geo-Portfolio"
       },
       "desktop_browser": {
           "design": "raw"
       },
       "windows": {
           "picture_aspect": "no_change",
-          "background_color": "#00aba9",
+          "background_color": "#603cba",
           "on_conflict": "override",
           "assets": {
               "windows_80_ie_10_tile": false,
@@ -25,12 +28,14 @@
                   "big": false,
                   "rectangle": false
               }
-          }
+          },
+          "app_name": "Geo-Portfolio"
       },
       "android_chrome": {
           "picture_aspect": "no_change",
-          "theme_color": "#ffffff",
+          "theme_color": "#cccccc",
           "manifest": {
+              "name": "Geo-Portfolio",
               "display": "standalone",
               "orientation": "not_set",
               "on_conflict": "override",
@@ -43,7 +48,7 @@
       },
       "safari_pinned_tab": {
           "picture_aspect": "silhouette",
-          "theme_color": "#5bbad5"
+          "theme_color": "#7b7b7b"
       }
   },
   "settings": {

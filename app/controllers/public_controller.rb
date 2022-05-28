@@ -6,9 +6,15 @@ class PublicController < ApplicationController
     
     if params[:random] != "true"
 
-      # Use Geocoder gem to look up user IP address
-      @ip_address = lookup_ip_location.ip
+      if Rails.env.development?
+        # Use local IP address
+        @ip_address = Rails.application.credentials.ip_address
+      else
+        # Use Geocoder gem to look up user IP address
+        @ip_address = lookup_ip_location.ip
+      end
 
+      # Call private method
       check_ip_address
 
     else
@@ -67,6 +73,7 @@ class PublicController < ApplicationController
       @city = random_location[:city]
       @country = random_location[:country]
 
+      # Call private method
       get_city
 
     end
@@ -83,6 +90,7 @@ class PublicController < ApplicationController
     # Check IP address is present, else use random public IP address from Faker gem
     (@ip_address = Faker::Internet.public_ip_v4_address) if !@ip_address.present?
 
+    # Call private method
     get_city_url
 
   end
@@ -99,6 +107,7 @@ class PublicController < ApplicationController
     # Check city is not blank or nil else pull 'time_zone' from 'iplocate.io' response
     (@city = time_zone.split("/")[1]) if !@city.present?
 
+    # Call private method
     get_city
 
   end
@@ -113,8 +122,10 @@ class PublicController < ApplicationController
     @base_uri = "https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input="
     @city_url = URI(@base_uri + "#{@city_encoded}&inputtype=textquery&fields=formatted_address%2Cname%2Cphoto&key=#{Rails.application.credentials.api_key}")
 
+    # Call private method to return photo reference URL
     @photo_reference_url = get_reference(@city_url)
 
+    # Call private method to return URL of photo
     @city_photo_url = get_photo(@photo_reference_url)
 
   end
