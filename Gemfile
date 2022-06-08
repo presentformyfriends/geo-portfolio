@@ -15,7 +15,7 @@ gem 'pg', '~> 1.2', '>= 1.2.3'
 gem 'puma', '~> 5.0'
 
 # Use SCSS for stylesheets
-gem 'sass-rails', '>= 6'
+# gem 'sass-rails', '>= 6'
 
 # CSS Animations
 gem 'animate.css-rails', '~> 3.2.0'
@@ -62,6 +62,8 @@ group :development do
   gem 'listen', '~> 3.3'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  # Check queries
+  # gem 'bullet'
 end
 
 group :test do

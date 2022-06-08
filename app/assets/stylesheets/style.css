@@ -33,7 +33,18 @@ body {
   overflow-x: hidden;
 }
 
-h1 {
+/* h1 { */
+  /* display: flex;
+  flex-wrap: wrap; */
+  /* margin-bottom: 1%;
+  font-size: 8.25rem;
+  text-align: center;
+  line-height: 1.2;
+  text-transform: lowercase;
+  font-family: 'IBM Plex Serif', serif; */
+/* } */
+
+.primary-heading {
   /* display: flex;
   flex-wrap: wrap; */
   margin-bottom: 1%;
@@ -42,9 +53,11 @@ h1 {
   line-height: 1.2;
   text-transform: lowercase;
   font-family: 'IBM Plex Serif', serif;
+}
+
+.primary-heading.animated-fadeInDown {
   animation: fadeInDown;
-  animation-duration: 7s;
-  animation-delay: 2s;
+  animation-duration: 6s;
   animation-iteration-count: 1;
 }
 
@@ -376,25 +389,25 @@ section a:hover {
   text-align: center;
 }
 
-.project-box:nth-child(1) {
+.project-box:nth-child(1).animated-bounce {
   /* flex-grow: 1; */
   animation: bounceInLeft;
   animation-duration: 7s;
-  animation-delay: 2s;
+  /* animation-delay: 2s; */
   animation-iteration-count: 1;
 }
 
-.project-box:nth-child(2) {
+.project-box:nth-child(2).animated-bounce {
   animation: bounceInUp;
   animation-duration: 7s;
-  animation-delay: 2s;
+  /* animation-delay: 2s; */
   animation-iteration-count: 1;
 }
 
-.project-box:last-of-type {
+.project-box:last-of-type.animated-bounce {
   animation: bounceInRight;
   animation-duration: 7s;
-  animation-delay: 2s;
+  /* animation-delay: 2s; */
   animation-iteration-count: 1;
 }
 
@@ -598,12 +611,12 @@ address a  {
   padding: 0;
 }
 
-address a > svg {
+/* address a > svg {
   animation: lightSpeedInLeft;
   animation-duration: 2s;
   animation-delay: 2s;
   animation-iteration-count: 1;
-}
+} */
 
 address a:hover > svg {
   fill: #64FAC0;

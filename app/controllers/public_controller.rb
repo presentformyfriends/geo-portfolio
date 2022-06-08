@@ -97,6 +97,8 @@ class PublicController < ApplicationController
 
 
   def get_city_url
+    require "uri"
+    require "net/http"
 
     # Call to 'iplocate.io' API to get city name from user IP address
     response = Net::HTTP.get( URI.parse( "https://www.iplocate.io/api/lookup/#@ip_address" ) )
