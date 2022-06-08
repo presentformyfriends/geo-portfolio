@@ -411,6 +411,10 @@ section a:hover {
   animation-iteration-count: 1;
 }
 
+.projects-content > :hover {
+  transform: scale(1.1) translateZ(0px);
+}
+
 .project-box-content {
   /* margin-left: 0.5%;
   margin-right: 0.5%; */
