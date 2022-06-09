@@ -85,7 +85,6 @@ class PublicController < ApplicationController
 
 
   def check_ip_address
-    require 'faker'
 
     # Check IP address is present, else use random public IP address from Faker gem
     (@ip_address = Faker::Internet.public_ip_v4_address) if !@ip_address.present?
@@ -97,8 +96,6 @@ class PublicController < ApplicationController
 
 
   def get_city_url
-    require "uri"
-    require "net/http"
 
     # Call to 'iplocate.io' API to get city name from user IP address
     response = Net::HTTP.get( URI.parse( "https://www.iplocate.io/api/lookup/#@ip_address" ) )
@@ -134,8 +131,6 @@ class PublicController < ApplicationController
 
 
   def get_reference(url)
-    require "uri"
-    require "net/http"
 
     https = Net::HTTP.new(url.host, url.port)
     https.use_ssl = true
@@ -156,8 +151,6 @@ class PublicController < ApplicationController
 
 
   def get_photo(url)
-    require "uri"
-    require "net/http"
 
     res = Net::HTTP.get_response(URI(url))
 
