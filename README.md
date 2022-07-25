@@ -37,10 +37,6 @@ Responsive design portfolio site built with Ruby on Rails. Leverages the Google 
 * [Google Places](https://developers.google.com/maps/documentation/places/web-service/overview)
 * [IPLocate](https://www.iplocate.io/)
 
-## Browser Compatibility
-
-![iOS](https://img.shields.io/badge/iOS-15.0-hotpink?logo=apple&logoColor=pink) ![Android](https://img.shields.io/badge/android-12-hotpink?logo=android&logoColor=pink) ![Firefox](https://img.shields.io/badge/firefox-96.0.3-hotpink?logo=firefox&logoColor=pink) ![Chrome](https://img.shields.io/badge/chrome-101.0.4951.67-hotpink?logo=googleChrome&logoColor=pink) ![Safari](https://img.shields.io/badge/safari-14.0.3-hotpink?logo=safari&logoColor=pink) ![Edge](https://img.shields.io/badge/edge-101.0.1210.53-hotpink?logo=microsoftedge&logoColor=pink) ![Opera](https://img.shields.io/badge/opera-86.0.4363.59-hotpink?logo=opera&logoColor=pink) ![Vivaldi](https://img.shields.io/badge/vivaldi-5.2.2623.48-hotpink?logo=vivaldi&logoColor=pink) ![Brave](https://img.shields.io/badge/brave-1.38.119-hotpink?logo=brave&logoColor=pink) ![Tor](https://img.shields.io/badge/tor-11.0.13-hotpink?logo=torbrowser&logoColor=pink)
-
 ## ⚖️ License
 
 [![GitHub License](https://img.shields.io/github/license/presentformyfriends/instagram-clone?color=hotpink)](https://github.com/presentformyfriends/instagram-clone/blob/master/LICENSE)
